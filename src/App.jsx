@@ -1,23 +1,31 @@
 function App() {
-  // &&, ||
-  // falsy, truthy
-  // falsy : "", null, 0, undefined, false, NaN...
+  // javascript review
 
-  const a = 0;
-  if (a) {
-    console.log("a는 참");
-  } else {
-    console.log("a는 거짓");
-  }
-  // truthy : falsy 제외
-  // &&, || 와 조합
-  let b = 0; // or 0
-  let c = b && "값이 있음"; //
+  //data type
+  let a; // undefined
+  console.log("a", typeof a);
 
-  console.log("c", c);
+  let b = "문자열"; //string
+  console.log("b", typeof b);
 
-  let d = b || "값이 없음";
-  console.log("d", d);
+  let c = 3; // number
+  console.log("c", typeof c);
+
+  let d = 3.14;
+  console.log("d", typeof d);
+
+  let e = true; //boolean
+  console.log("e", typeof e);
+
+  let f = {}; // object
+  let g = []; // object
+  console.log("f", typeof f);
+  console.log("g", typeof g);
+
+  let h = function () {};
+  console.log("h", typeof h);
+  h = {};
+  console.log("h", typeof h);
 
   return <div></div>;
 }
