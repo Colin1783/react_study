@@ -1,23 +1,17 @@
-function App() {
-  //object : {} 안에 property 명: property 값(key:value)
-  let a = {};
-  let b = { name: "흥민" };
-  let c = { address: "신촌", city: "서울", country: "한국" };
+import React from "react";
 
-  console.log("a", a);
-  console.log("b", b);
-  console.log("c", c);
+function App(props) {
+  const a = {
+    name: "흥민",
+    team: "토트넘",
+    salary: 3,
+  };
 
-  console.log("c city", c.city);
-  console.log("c address", c.address);
-  console.log("c country", c.country);
-
-  b.city = "런던";
-  b.country = "영국";
-  console.log("b city", b.city);
-  console.log("b country", b.country);
-
-  return <div></div>;
+  return (
+    <div>
+      {a.name}은 {a.team} 소속이고 주급은 {a.salary}억이다.
+    </div>
+  );
 }
 
 export default App;
