@@ -1,17 +1,22 @@
 import React from "react";
 
 function App(props) {
+  // object
+
   const a = {
-    name: "흥민",
-    team: "토트넘",
-    salary: 3,
+    name: "john",
   };
 
-  return (
-    <div>
-      {a.name}은 {a.team} 소속이고 주급은 {a.salary}억이다.
-    </div>
-  );
+  const b = a;
+
+  console.log("a.name", a.name);
+  console.log("b.name", b.name);
+
+  b.name = "jane";
+  console.log("a.name", a.name);
+  console.log("b.name", b.name);
+
+  return <div></div>;
 }
 
 export default App;
