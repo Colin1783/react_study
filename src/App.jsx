@@ -1,15 +1,22 @@
 import React from "react";
 
 function App(props) {
-  const a = {
-    name: "흥민",
-    team: "토트넘",
-    salary: 3,
+  const obj = {
+    age: 30,
+    name: "John Doe",
+    email: "john@example.com",
+    password: "1234567890",
   };
 
   return (
     <div>
-      {a.name}은 {a.team} 소속이고 주급은 {a.salary}억이다.
+      name: {obj.name}
+      <br />
+      age: {obj.age}
+      <br />
+      email: {obj.email}
+      <br />
+      password: {obj.password}
     </div>
   );
 }
