@@ -18,6 +18,14 @@ function App(props) {
   console.log(h[1]); // 9
   console.log(h[2]); // 10
 
+  const i = ["pizza", "pasta", "bread"];
+  const j = i;
+  const [...k] = i;
+
+  k[2] = "salad";
+  console.log(j); // ["pizza", "pasta", "bread"]
+  console.log(k); // ["pizza", "pasta", "salad"]
+
   return <div></div>;
 }
 
