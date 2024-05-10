@@ -1,33 +1,24 @@
 import React from "react";
-
-function MyComponent({ headStyle, bodyStyle }) {
-  return (
-    <div>
-      <h1 style={headStyle}>Hello, World!</h1>
-      <p style={bodyStyle}>This is a simple component.</p>
-    </div>
-  );
-}
+import { Button, ChakraProvider } from "@chakra-ui/react";
 
 function App(props) {
   return (
-    <div>
-      <MyComponent
-        headStyle={{
-          padding: "5px",
-          border: "1px solid black",
-          padding: "10px",
-        }}
-      />
-      <MyComponent
-        bodyStyle={{
-          margin: "5px",
-          border: "1px dotted skyblue",
-          color: "red",
-          textAlign: "center",
-        }}
-      />
-    </div>
+    <ChakraProvider>
+      <div>
+        <Button colorScheme="blue">Button</Button>
+        <Button colorScheme="orange">Button</Button>
+        <Button
+          sx={{
+            color: "skyblue",
+            fontSize: "40px",
+            padding: "20px",
+          }}
+          colorScheme={"gray"}
+        >
+          클릭
+        </Button>
+      </div>
+    </ChakraProvider>
   );
 }
 
