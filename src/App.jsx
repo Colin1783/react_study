@@ -1,38 +1,46 @@
 import React from "react";
 
 function App(props) {
-  //destructing assignment
-  const person = {
-    name: "John",
-    email: "john@example.com",
-    address: "127.0.0.1",
-  };
+  // object ({}, [])
+  const a = [6, 7, 8];
+  const v1 = a[0];
+  const v2 = a[1];
+  const v3 = a[2];
 
-  const { name, email } = person;
-  console.log("name", name, "email", email);
-  // console.log("address", address);
+  console.log(a);
+  console.log(v1);
+  console.log(v2);
+  console.log(v3);
 
-  const car = {
-    model: "genesis",
-    company: "Hyundai",
-    price: 500,
-  };
+  const [x, y, z] = a;
 
-  const { model, company, color } = car;
+  //연습
+  const b = ["pizza", 3.14, "lunch"];
 
-  console.log(model);
-  console.log(company);
-  console.log(color);
+  const [x1, x2, x3] = b;
 
-  const house = {
-    city: "seoul",
-    country: "us",
-  };
+  console.log("x1", x1);
+  console.log("x2", x2);
+  console.log("x3", x3);
 
-  const { city, country, district = "district9" } = house;
-  console.log("city", city);
-  console.log(country);
-  console.log(district);
+  const c = ["son", "lee"];
+  const [a1] = c;
+  console.log("a1", a1);
+
+  const [b1, b2, b3 = "hwang"] = c;
+
+  console.log("b1", b1);
+  console.log("b2", b2);
+  console.log("b3", b3);
+
+  // 연습
+  const d = ["name", "email", "phone"];
+
+  const [d1, d2, d3, d4 = "city"] = d;
+  console.log("d1", d1);
+  console.log("d2", d2);
+  console.log("d3", d3);
+  console.log("d4", d4);
 
   return <div></div>;
 }
