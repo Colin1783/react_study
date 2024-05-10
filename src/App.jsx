@@ -12,6 +12,9 @@ function App(props) {
 
   action1();
 
+  // arrow function
+  const action3 = () => console.log("anonymous function3 called");
+
   return (
     <div>
       <button onClick={action1}>클릭1</button>
@@ -22,6 +25,10 @@ function App(props) {
         }}
       >
         클릭3
+      </button>
+      <button onClick={action3}>클릭4</button>
+      <button onClick={() => console.log("direct arrow function")}>
+        클릭5
       </button>
     </div>
   );
