@@ -1,5 +1,3 @@
-const v1 = "korea";
-const v2 = 44;
-export const v3 = 3.14;
+const val = "world";
 
-export { v1, v2 };
+export default val;
