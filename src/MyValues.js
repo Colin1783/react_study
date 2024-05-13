@@ -1,8 +1,7 @@
-// export : 다른 파일에서 사용할 수 있도록 내보내는 기능
+import React from "react";
 
-const value1 = "son";
-const value2 = "lee";
-const value3 = 44;
-const value4 = { name: "kim", team: "뮌헨" };
+function MyValues(props) {
+  return <div></div>;
+}
 
-export { value1, value2, value3, value4 }; // 여러개 내보내기
+export default MyValues;
