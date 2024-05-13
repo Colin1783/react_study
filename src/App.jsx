@@ -6,7 +6,7 @@ function MyComp1() {
   function addItem() {
     const [...newVal] = val; // [] -> ["a"]
     newVal.push("a");
-    setVal(newVal
+    setVal(newVal);
   }
 
   return (
