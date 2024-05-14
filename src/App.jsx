@@ -23,8 +23,8 @@ function App(props) {
     qs.append("name", "son");
     qs.append("age", 30);
     qs.append("city", "서울");
-    // axios.get("/path3?" + qs.toString());
-    axios.get("/path4?", { params: qs });
+    axios.get("/path3?" + qs.toString());
+    // axios.get("/path4?", { params: qs });
   }
 
   return (
