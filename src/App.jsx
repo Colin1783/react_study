@@ -1,27 +1,24 @@
 import React, { createContext, useContext, useState } from "react";
 
-// eslint-disable-next-line no-unused-vars
 const TextContext = createContext("");
 
 function MyInput() {
-  const textHandler = useContext(TextContext);
+  const { text, handlerChange } = useContext(TextContext);
+
   return (
     <div>
-      <input
-        type="text"
-        onChange={(e) => textHandler.updateText(e.target.value)}
-      />
-      <p>{textHandler.text}</p>
+      <input type="text" onChange={(e) => handlerChange(e.target.value)} />
+      <p>{text}</p>
     </div>
   );
 }
 
 function MyText() {
-  const textHandler = useContext(TextContext);
+  const { text } = useContext(TextContext);
 
   return (
     <div>
-      <p>{textHandler.text}</p>
+      <p>{text}</p>
     </div>
   );
 }
@@ -29,12 +26,12 @@ function MyText() {
 function App(props) {
   const [text, setText] = useState("");
 
-  function handleUpdateText(t) {
+  function handlerChange(t) {
     setText(t);
   }
 
   return (
-    <TextContext.Provider value={{ text, updateText: handleUpdateText }}>
+    <TextContext.Provider value={{ text, handlerChange }}>
       <div>
         <MyInput />
         <hr />
