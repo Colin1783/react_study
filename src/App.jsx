@@ -21,7 +21,7 @@ function App(props) {
       <input
         type="checkbox"
         checked={view1}
-        onClick={(e) => setView1(e.target.checked)}
+        onChange={(e) => setView1(e.target.checked)}
       />
       {view1 && <MyBox color={"blue"} />}
       <hr />
@@ -29,7 +29,7 @@ function App(props) {
         <input
           type="checkbox"
           checked={view1}
-          onClick={(e) => setView2(e.target.checked)}
+          onChange={(e) => setView2(e.target.checked)}
         />
         {view2 && <MyBox color={"red"} />}
       </div>
