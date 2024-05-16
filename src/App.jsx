@@ -3,7 +3,9 @@ import axios from "axios";
 
 function App(props) {
   const [name, setName] = useState("");
-  const [city, setCity] = useState();
+  const [city, setCity] = useState("");
+  const [company, setCompany] = useState("");
+  const [phone, setPhone] = useState("");
 
   function handleClick1() {
     const data = {
@@ -31,6 +33,10 @@ function App(props) {
     axios.post("/api/main41/sub3", { name, city });
   }
 
+  function handleClick4() {
+    axios.post("/api/main41/sub4", { company, phone });
+  }
+
   return (
     <div>
       <button onClick={handleClick1}>요청(JSON 데이터 포함)</button>
@@ -42,6 +48,13 @@ function App(props) {
         <input type="text" onChange={(e) => setCity(e.target.value)} />
         <br />
         <button onClick={handleClick3}>클릭</button>
+      </div>
+      <div>
+        <input type="text" onChange={(e) => setCompany(e.target.value)} />
+        <br />
+        <input type="text" onChange={(e) => setPhone(e.target.value)} />
+        <br />
+        <button onClick={handleClick4}>전송</button>
       </div>
     </div>
   );
