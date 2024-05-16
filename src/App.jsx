@@ -22,16 +22,31 @@ function App(props) {
       .then((response) => console.log(response.data));
   }
 
+  function handleClick4() {
+    axios.get("/api/main42/sub4").then((response) => {
+      console.log(response.data);
+    });
+  }
+
+  function handleClick5() {
+    axios.get("/api/main42/sub5").then((response) => {
+      console.log(response.data);
+    });
+  }
+
   return (
     <div>
       <button onClick={handleClick1}>클릭</button>
       <br />
-      <button onClick={handleClick2}> 클릭 </button>
+      <button onClick={handleClick2}> 클릭</button>
       <br />
       <p>{result}</p>
       <br />
       <button onClick={handleClick3}>크을릭</button>
       <br />
+      <button onClick={handleClick4}>클릭</button>
+      <br />
+      <button onClick={handleClick5}>클릭5</button>
     </div>
   );
 }
