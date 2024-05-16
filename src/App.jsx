@@ -34,6 +34,12 @@ function App(props) {
     });
   }
 
+  function handleClick6() {
+    axios.get("/api/main42/sub6").then((response) => {
+      console.log(response.data);
+    });
+  }
+
   return (
     <div>
       <button onClick={handleClick1}>클릭</button>
@@ -47,6 +53,8 @@ function App(props) {
       <button onClick={handleClick4}>클릭</button>
       <br />
       <button onClick={handleClick5}>클릭5</button>
+      <br />
+      <button onClick={handleClick6}>클릭6</button>
     </div>
   );
 }
