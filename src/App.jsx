@@ -38,11 +38,74 @@ function App(props) {
       });
   }
 
+  function handle401() {
+    axios
+      .get("/api/main43/sub3")
+      .then((response) => {})
+      .catch((err) => {
+        if (err.response.status === 401) {
+          console.log("인증 오류입니다.");
+        } else if (err.response.status === 403) {
+          console.log("권한 오류입니다.");
+        }
+      });
+  }
+
+  function handle403() {
+    axios
+      .get("/api/main43/sub4")
+      .then((response) => {})
+      .catch((err) => {
+        if (err.response.status === 401) {
+          console.log("인증 오류입니다.");
+        } else if (err.response.status === 403) {
+          console.log("권한 오류입니다.");
+        }
+      });
+  }
+
+  function handle999() {
+    const r = Math.random();
+    let path = "";
+    if (r < 1 / 3) {
+      path = "api/main43/sub1";
+    } else if (r < 2 / 3) {
+      path = "api/main43/sub3";
+    } else {
+      path = "api/main43/sub6";
+    }
+    axios
+      .get(path)
+      .then(() => {
+        console.log("잘 됨");
+      })
+      .catch((err) => {
+        const code = err.response.status;
+
+        switch (code) {
+          case 401:
+            console.log("인증 오류입니다.");
+            break;
+          case 500:
+            console.log("권한 오류입니다.");
+            break;
+        }
+      })
+      .finally(() => {
+        console.log("무조건 실행");
+      });
+  }
+
   return (
     <div>
       <button onClick={handle200}> 200번 응답</button>
       <button onClick={handle400}> 400번 응답</button>
       <button onClick={handle500}> 500번 응답</button>
+
+      <button onClick={handle200}>200</button>
+      <button onClick={handle401}>401</button>
+      <button onClick={handle403}>403</button>
+      <button onClick={handle999}>999</button>
     </div>
   );
 }
