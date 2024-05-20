@@ -4,7 +4,9 @@ import { Box, ChakraProvider } from "@chakra-ui/react";
 function App(props) {
   return (
     <ChakraProvider>
-      <Box>Lorem ipsum dolor.</Box>
+      <Box bgColor={"orange"} _hover={{ bgColor: "yellow" }}>
+        Lorem ipsum dolor.
+      </Box>
     </ChakraProvider>
   );
 }
